@@ -254,3 +254,22 @@ submission (see "Known Limitations" below). To deploy on free tiers:
 - Accounts role is currently read-only everywhere; if the real business needs
   Accounts to, say, mark challans as invoiced, that's a small addition to
   `backend/src/routes/challan.routes.ts`.
+
+  ## 12. Deployment Status
+
+Live deployment to Render (backend) and Vercel (frontend) was attempted but not
+completed before the submission deadline, due to environment-specific
+configuration issues (root directory path resolution, TypeScript build config)
+encountered on the free-tier platforms. All core functionality is fully working
+and verified via local setup — see Section 3 and 4 above for exact run
+instructions, or watch the attached recording for a full walkthrough.
+
+## 13. Known Limitations / Not Implemented
+
+- Not deployed to a live URL — see Deployment Status above.
+- No automated test suite — effort went into correctness of the transactional
+  business logic (stock-safe challan confirm/cancel) instead, given the time
+  constraint.
+- No PDF invoice export or S3 image upload (bonus items, out of scope).
+- No purchase-order module (case study's "Core Modules Required" section,
+  which this submission targets exhaustively, does not include one).
