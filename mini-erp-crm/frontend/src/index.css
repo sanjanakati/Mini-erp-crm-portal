@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-paper text-brand-700 font-sans antialiased;
+}
+
+h1, h2, h3 {
+  @apply font-display;
+}
+
+/* -- Buttons -- */
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-sm px-4 py-2 text-sm font-medium tracking-wide transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+}
+.btn-primary {
+  @apply btn bg-brand-600 text-paper hover:bg-brand-700;
+}
+.btn-secondary {
+  @apply btn bg-paper-card text-brand-600 border border-rule hover:bg-white;
+}
+.btn-danger {
+  @apply btn bg-stamp-red text-paper hover:opacity-90;
+}
+.btn-sm {
+  @apply px-2.5 py-1.5 text-xs;
+}
+
+/* -- Forms -- */
+.input {
+  @apply block w-full rounded-sm border border-rule bg-white px-3 py-2 text-sm text-brand-700 shadow-none focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500;
+}
+.label {
+  @apply block text-xs font-semibold uppercase tracking-wider text-stamp-slate mb-1.5;
+}
+
+/* -- Surfaces -- */
+.card {
+  @apply bg-paper-card rounded-md border border-rule shadow-sm;
+}
+
+/* Ledger-ruled tables: hairline rows instead of Tailwind's default gray */
+table.ledger thead {
+  @apply bg-brand-50 text-[11px] uppercase tracking-wider text-stamp-slate;
+}
+table.ledger tbody tr {
+  @apply border-t border-rule;
+}
+table.ledger tbody tr:hover {
+  @apply bg-brand-50/60;
+}
+
+/* -- Ink-stamp status badge -- the signature element: statuses read
+   like a rubber stamp pressed onto a challan, not a flat UI pill. */
+.stamp {
+  @apply inline-flex items-center rounded-[3px] border-[1.5px] px-2 py-0.5
+    font-mono text-[10px] font-semibold uppercase tracking-widest;
+  transform: rotate(-2deg);
+  background: transparent;
+}
+.stamp-green {
+  @apply border-stamp-green text-stamp-green;
+  box-shadow: 0 0 0 1px rgba(60, 110, 71, 0.15) inset;
+}
+.stamp-red {
+  @apply border-stamp-red text-stamp-red;
+  box-shadow: 0 0 0 1px rgba(168, 59, 50, 0.15) inset;
+  transform: rotate(1.5deg);
+}
+.stamp-amber {
+  @apply border-amber text-amber-dark;
+  box-shadow: 0 0 0 1px rgba(217, 142, 31, 0.15) inset;
+}
+.stamp-slate {
+  @apply border-stamp-slate text-stamp-slate;
+  box-shadow: 0 0 0 1px rgba(91, 100, 114, 0.15) inset;
+  transform: rotate(1deg);
+}
+.stamp-navy {
+  @apply border-brand-500 text-brand-500;
+  box-shadow: 0 0 0 1px rgba(44, 62, 96, 0.15) inset;
+}
+
+/* Filing-card tab used on dashboard stat cards */
+.card-tab {
+  @apply absolute -top-2.5 left-3 rounded-sm bg-amber px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-white;
+}
